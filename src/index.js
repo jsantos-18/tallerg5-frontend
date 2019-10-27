@@ -9,10 +9,12 @@ import LoginFormNombreApellidos from './Componentes/LoginFormNombreApellidos';
 import registerServiceWorker from './registerServiceWorker';
 import { Router, Route, browserHistory } from 'react-router-3';
 import LoginForm from './Componentes/LoginForm';
+import FormularioTramites from "./Componentes/FormularioTramites";
 import VistaTablaNuevo from './Componentes/VistaTablaNueva';
 import VistaIntermedia from './Componentes/seleccion-intermedia';
 import ComponenteEditable from './Componentes/ComponenteEditable';
 import Formulario from './Componentes/formulario';
+import TramiteIntermedio from './Componentes/TramiteIntermedio';
 import VistaSeguimientoEgresado from './Componentes/VistaSeguimientoEgresado';
 
 class Index extends React.Component {
@@ -31,7 +33,10 @@ class Index extends React.Component {
             <Route path="/vista/tabla" component={ VistaTablaNuevo}></Route>
             <Route path="/vista/loginNyA" component={LoginFormNombreApellidos}></Route>
             <Route path="/vista/imprimir" component={ComponenteEditable}></Route>
-            <Route path="/formulario/:codigo" component={Formulario}></Route>          
+            <Route path="/formulario/:codigo" component={Formulario}></Route>
+                <Route path="/registro-tramite/:codigo" component={FormularioTramites}></Route>
+                <Route path="/:name/tramite-intermedio" component={TramiteIntermedio}></Route>
+
             <Route path="/:name/vista/egresado" component={VistaSeguimientoEgresado}></Route>
             
           </Router>

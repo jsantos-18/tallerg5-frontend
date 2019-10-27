@@ -813,8 +813,8 @@ this.setState({
               <div id="mySidebar" class="sidebar">
                 <a href="javascript:void(0)" class="closebtn" onClick={this.closeNav}>×</a>
                 <a href="#" onClick={this.seguimientoEgresados}>Seguimiento de Egresados</a>
-                <a href="#" onClick={this.enviarFormularioTramite}>Revisar Beneficio</a>
-                  <a href="#" onClick={this.enviarFormulario}>Registrar trámite</a>
+                <a href="#" onClick={this.enviarFormulario}>Revisar Beneficio</a>
+                  <a href="#" onClick={this.enviarFormularioTramite}>Registrar trámite</a>
                 <a href="#" onClick={this.Regresar}>Regresar</a>
               </div>
               {/*Fin*/}
@@ -895,7 +895,6 @@ this.setState({
           </div>
         </div>
           ):(
-
             <div>
                 <div>
                   <div className="">
@@ -1197,26 +1196,10 @@ enviarFormulario=(e)=>{
   }
 
 }
+
 enviarFormularioTramite=(e)=>{
-        try{
-            this.closeNav();
-        }
-        catch(error){
-            //Nothing happens
-        }
-        if(this.state.aparecer){
-            this.setState({
-                aparecer:false,
-            });
-
-        }
-
-        else{
-            this.setState({
-                aparecer:true,
-            });
-            // window.location.reload();
-        }
+    browserHistory.push(this.state.name+'/tramite-intermedio');
+    e.preventDefault();
 
     }
 reporte_credito(idx,nombrenuevo,auxPagos){
