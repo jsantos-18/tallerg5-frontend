@@ -165,7 +165,7 @@ class LoginForm2 extends React.Component {
     render() {
       return (
         <div className="">
-        <h3>Módulo consulta de pagos
+        <h3>Módulo consulta de pagos (por nombres)
            <ul id="nav-mobile" className="right  hide-on-med-and-down">
                 <li ><a className="seleccionar" href="https://siga-fisi.herokuapp.com/dashboard" >Vista Principal<i className="material-icons right">launch</i></a></li>
                 
