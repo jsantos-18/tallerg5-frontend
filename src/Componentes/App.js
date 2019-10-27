@@ -14,6 +14,7 @@ import {browserHistory} from 'react-router-3';
 import swal from 'sweetalert';
 import CONFIG from '../Configuracion/Config'
 import FormularioIntermio from './formulario-intermedio';
+import FormularioTramites from "./FormularioTramites";
 import ComponenteEditable from './ComponenteEditable'
 import ImporteDolar from './ImporteDolar';
 
@@ -812,7 +813,7 @@ this.setState({
               <div id="mySidebar" class="sidebar">
                 <a href="javascript:void(0)" class="closebtn" onClick={this.closeNav}>×</a>
                 <a href="#" onClick={this.seguimientoEgresados}>Seguimiento de Egresados</a>
-                <a href="#" onClick={this.enviarFormulario}>Revisar Beneficio</a>
+                <a href="#" onClick={this.enviarFormularioTramite}>Revisar Beneficio</a>
                   <a href="#" onClick={this.enviarFormulario}>Registrar trámite</a>
                 <a href="#" onClick={this.Regresar}>Regresar</a>
               </div>
@@ -896,18 +897,41 @@ this.setState({
           ):(
 
             <div>
-              <div className="">
-                    <h3>
-                    Lista de Beneficios
-                    <ul id="nav-mobile" className="row right hide-on-med-and-down">
-                    <li ><a className="seleccionar col" onClick={this.enviarFormulario} >Regresar<i className="material-icons right">reply</i></a></li>
+                <div>
+                  <div className="">
+                        <h3>
+                        Lista de Beneficios
+                        <ul id="nav-mobile" className="row right hide-on-med-and-down">
+                        <li ><a className="seleccionar col" onClick={this.enviarFormulario} >Regresar<i className="material-icons right">reply</i></a></li>
 
-                    </ul>
-                    </h3>
+                        </ul>
+                        </h3>
+                    </div>
+
+                  <FormularioIntermio codigo={this.state.name} idprograma={this.state.pagos[0].idPrograma}/>
                 </div>
 
-              <FormularioIntermio codigo={this.state.name} idprograma={this.state.pagos[0].idPrograma}/>
+                <div>
+                    <div className="">
+                        <h3>
+                            Lista de Trámites
+                            <ul id="nav-mobile" className="row right hide-on-med-and-down">
+                                <li ><a className="seleccionar col" onClick={this.enviarFormularioTramite} >Regresar<i className="material-icons right">reply</i></a></li>
+
+                            </ul>
+                        </h3>
+                    </div>
+
+                    <FormularioTramites codigo={this.state.name} idprograma={this.state.pagos[0].idPrograma}/>
+                </div>
+
             </div>
+
+            //registro de tramite
+
+
+
+
 
 
 
@@ -1187,6 +1211,28 @@ enviarFormulario=(e)=>{
   }
 
 }
+enviarFormularioTramite=(e)=>{
+        try{
+            this.closeNav();
+        }
+        catch(error){
+            //Nothing happens
+        }
+        if(this.state.aparecer){
+            this.setState({
+                aparecer:false,
+            });
+
+        }
+
+        else{
+            this.setState({
+                aparecer:true,
+            });
+            // window.location.reload();
+        }
+
+    }
 reporte_credito(idx,nombrenuevo,auxPagos){
      fetch(CONFIG+'beneficio/breporte_cr/' + nombrenuevo+'/'+auxPagos[0].idPrograma+"/"+idx)
      .then((response)=>{
