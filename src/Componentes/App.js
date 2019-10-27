@@ -911,20 +911,6 @@ this.setState({
                   <FormularioIntermio codigo={this.state.name} idprograma={this.state.pagos[0].idPrograma}/>
                 </div>
 
-                <div>
-                    <div className="">
-                        <h3>
-                            Lista de Trámites
-                            <ul id="nav-mobile" className="row right hide-on-med-and-down">
-                                <li ><a className="seleccionar col" onClick={this.enviarFormularioTramite} >Regresar<i className="material-icons right">reply</i></a></li>
-
-                            </ul>
-                        </h3>
-                    </div>
-
-                    <FormularioTramites codigo={this.state.name} idprograma={this.state.pagos[0].idPrograma}/>
-                </div>
-
             </div>
 
             //registro de tramite
