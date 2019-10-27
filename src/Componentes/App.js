@@ -813,6 +813,7 @@ this.setState({
                 <a href="javascript:void(0)" class="closebtn" onClick={this.closeNav}>×</a>
                 <a href="#" onClick={this.seguimientoEgresados}>Seguimiento de Egresados</a>
                 <a href="#" onClick={this.enviarFormulario}>Revisar Beneficio</a>
+                  <a href="#" onClick={this.enviarFormulario}>Registrar trámite</a>
                 <a href="#" onClick={this.Regresar}>Regresar</a>
               </div>
               {/*Fin*/}
@@ -907,6 +908,10 @@ this.setState({
 
               <FormularioIntermio codigo={this.state.name} idprograma={this.state.pagos[0].idPrograma}/>
             </div>
+
+
+
+
 
 
           // <div>
