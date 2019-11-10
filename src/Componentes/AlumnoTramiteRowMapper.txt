@@ -1,0 +1,36 @@
+package edu.moduloalumno.rowmapper;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import org.springframework.jdbc.core.RowMapper;
+
+import edu.moduloalumno.entity.AlumnoProgramaTramite;
+public class AlumnoTramiteRowMapper implements RowMapper<AlumnoProgramaTramite> {
+
+	@Override //beneficio
+	public AlumnoProgramaTramite mapRow(ResultSet rs, int rowNum) throws SQLException {
+		AlumnoProgramaTramite ab = new AlumnoProgramaTramite();
+		ab.setcodAlumno(rs.getString("cod_alumno"));
+		ab.setidPrograma(rs.getInt("id_programa"));
+		ab.setidTipoTramite(rs.getInt("id_tipotramite"));
+		ab.setidApb(rs.getString("id_apb"));
+		ab.setnExpediente(rs.getString("n_expediente"));
+		ab.setanioExpediente(rs.getString("anio_expediente"));
+		ab.setfechaExpediente(rs.getDate("fecha_expediente"));
+		ab.setnTramite(rs.getString("n_tramite"));
+		ab.setanioTramite(rs.getString("anio_tramite"));
+		ab.setfechaEmision(rs.getDate("fecha_emision"));
+		ab.setusuarioEmision(rs.getString("usuario_emision"));
+		ab.setnOficio(rs.getString("n_oficio"));
+		ab.setanioOficio(rs.getString("anio_oficio"));
+		ab.setfechaOficio(rs.getDate("fecha_oficio"));
+        ab.setimporteOficio(rs.getDouble("importe_oficio"));
+        ab.setimporteMatricula(rs.getDouble("importe_matricula"));
+        ab.setimporteMatriculaAd(rs.getDouble("importe_matricula_ad"));
+        ab.setimporteMatriculaEpg(rs.getDouble("importe_matricula_epg"));
+        ab.setimporteEnsenanza(rs.getDouble("importe_ensenanza"));
+        ab.setimporteRepitencia(rs.getDouble("importe_repitencia"));
+        ab.setimporteOtros(rs.getDouble("importe_otros"));
+        ab.setimporteTotal(rs.getDouble("importe_total"));
+		return ab;
+		

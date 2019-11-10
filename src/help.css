@@ -1,0 +1,25 @@
+/* input {
+   border-bottom: none;
+}
+
+input[type=text]:not(.browser-default):focus:not([readonly]) {
+   border-bottom: none;
+   box-shadow: none
+}
+
+input[type=number]:not(.browser-default):focus:not([readonly]) {
+   border-bottom: none;
+   box-shadow: none
+} */
+
+.medium {
+    width: 100%;
+}
+
+.MuiInput-underline:before {
+    border-bottom: 0px!important;
+}
+
+.MuiInput-underline:after {
+    border-bottom: 0px!important;
+}
