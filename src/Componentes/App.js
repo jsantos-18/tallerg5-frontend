@@ -14,6 +14,7 @@ import {browserHistory} from 'react-router-3';
 import swal from 'sweetalert';
 import CONFIG from '../Configuracion/Config'
 import FormularioIntermio from './formulario-intermedio';
+import TramiteRegistrar from "./TramiteRegistrar";
 import FormularioTramites from "./FormularioTramites";
 import ComponenteEditable from './ComponenteEditable'
 import ImporteDolar from './ImporteDolar';
@@ -814,7 +815,7 @@ this.setState({
                 <a href="javascript:void(0)" class="closebtn" onClick={this.closeNav}>×</a>
                 <a href="#" onClick={this.seguimientoEgresados}>Seguimiento de Egresados</a>
                 <a href="#" onClick={this.enviarFormulario}>Revisar Beneficio</a>
-                  <a href="#" onClick={this.enviarFormularioTramite}>Registrar trámite</a>
+                  <a href="#" onClick={this.registrarTramite}>Registrar trámite</a>
                 <a href="#" onClick={this.Regresar}>Regresar</a>
               </div>
               {/*Fin*/}
@@ -1197,8 +1198,8 @@ enviarFormulario=(e)=>{
 
 }
 
-enviarFormularioTramite=(e)=>{
-    browserHistory.push(this.state.name+'/tramite-intermedio');
+registrarTramite=(e)=>{
+    browserHistory.push(this.state.name+'/tramite');
     e.preventDefault();
 
     }

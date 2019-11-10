@@ -439,7 +439,7 @@ class FormularioTramites extends React.Component {
             value = { this.state.OpcionCriterio }
             options = { this.state.criterio }
             onChange = { this.handleChangeCriterio }
-
+H
 
 
 

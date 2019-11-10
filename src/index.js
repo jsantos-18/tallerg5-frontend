@@ -14,8 +14,10 @@ import VistaTablaNuevo from './Componentes/VistaTablaNueva';
 import VistaIntermedia from './Componentes/seleccion-intermedia';
 import ComponenteEditable from './Componentes/ComponenteEditable';
 import Formulario from './Componentes/formulario';
-import TramiteIntermedio from './Componentes/TramiteIntermedio';
 import VistaSeguimientoEgresado from './Componentes/VistaSeguimientoEgresado';
+import Tramite from "./Componentes/Tramite";
+import TramiteRegistrar from "./Componentes/TramiteRegistrar";
+
 
 class Index extends React.Component {
     render() {
@@ -34,8 +36,9 @@ class Index extends React.Component {
             <Route path="/vista/loginNyA" component={LoginFormNombreApellidos}></Route>
             <Route path="/vista/imprimir" component={ComponenteEditable}></Route>
             <Route path="/formulario/:codigo" component={Formulario}></Route>
-                <Route path="/registro-tramite/:codigo" component={FormularioTramites}></Route>
-                <Route path="/:name/tramite-intermedio" component={TramiteIntermedio}></Route>
+                <Route path="/:name/tramite" component={Tramite}></Route>
+                <Route path="/:name/tramite/agregar" component={TramiteRegistrar}></Route>
+
 
             <Route path="/:name/vista/egresado" component={VistaSeguimientoEgresado}></Route>
             
