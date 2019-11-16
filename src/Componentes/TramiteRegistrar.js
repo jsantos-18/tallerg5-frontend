@@ -7,6 +7,7 @@ import { browserHistory } from 'react-router-3';
 
 class TramiteRegistrar extends Component {
 
+
     constructor(props) {
         super(props);
 
@@ -42,51 +43,58 @@ class TramiteRegistrar extends Component {
     }
 
     async componentDidMount() {
-
-        /*const resTipoTramites = await fetch(CONFIG + '/curso/listar');
+        console.log("gaaaa")
+       const resTipoTramites = await fetch(CONFIG + 'tipos-tramites/listar');
         const tipotramites = await resTipoTramites.json();
+        console.log(resTipoTramites);
+        console.log(tipotramites);
 
-        const resProgramasBeneficios = await fetch(CONFIG + '/docente/listar');
-        const programasbeneficios = await resProgramasBeneficios.json();
+        const resProgramasBeneficios = await fetch(CONFIG + '/alumnos-programas-beneficios/listar');
+       const programasbeneficios = await resProgramasBeneficios.json();
+       console.log(resProgramasBeneficios);
+       console.log(programasbeneficios);
 
-        const resProgramas = await fetch(CONFIG + '/estado/listar');
-        const programas = await resProgramas.json();
+      const resProgramas = await fetch(CONFIG + '/alumnos-programas-tramites/listar');
+      const programas = await resProgramas.json();
+      console.log(resProgramas);
+      console.log(programas);
 
-        let arrayTipoTramites = [];
-        let arrayProgramasBeneficios = [];
+
+       let arrayProgramasBeneficios = [];
         let arrayProgramas = [];
+       let arrayTipoTramites = [];
 
-        tipotramites.forEach(element => {
-            let tipotramite = {
-                value: element.id_tipotramite,
-                label: element.desc_tipotramite,
-            };
-            arrayTipoTramites.push(tipotramite)
-        });
+       tipotramites.forEach(element => {
+           let tipotramite = {
+               value: element.idTipoTramite,
+               label: element.descTipoTramite,
+           };
+           arrayTipoTramites.push(tipotramite)
+       });
 
-        programasbeneficios.forEach(element => {
-            let programabeneficio = {
-                value: programabeneficio.id_beneficio,
-                label: element.beneficio_otorgado
-            };
-            arrayProgramasBeneficios.push(programabeneficio)
-        });
+       programasbeneficios.forEach(element => {
+           let programabeneficio = {
+               value: element.idBeneficio,
+               label: element.beneficioOtorgado
+           };
+           arrayProgramasBeneficios.push(programabeneficio)
+       });
 
 
         programas.forEach(element => {
-            let programa = {
-                value: element.id_programa,
-                label: element.nom_programa
-            };
-            arrayProgramas.push(programa)
-        });
+           let programa = {
+               value: element.idPrograma,
+               label: element.idPrograma
+           };
+           arrayProgramas.push(programa)
+       });
 
-        this.setState({
-            tipotramites: arrayTipoTramites,
-            programasbeneficios: arrayProgramasBeneficios,
-            programas: arrayProgramas,
-        });
-        */
+       this.setState({
+           tipotramites: arrayTipoTramites,
+           programasbeneficios: arrayProgramasBeneficios,
+            programas: arrayProgramas
+       });
+
     }
 
     async guardar() {
@@ -95,7 +103,7 @@ class TramiteRegistrar extends Component {
             id_apt: this.state.id_apt,
             cod_alumno: this.state.id,
             id_programa: this.state.programa,
-            id_tipotramite: this.state.tipotramite,
+            id_tipotramite: this.state.id_tipotramite,
             id_apb: this.state.programabeneficio,
             n_expediente: this.state.n_expediente,
             anio_expediente: this.state.anio_expediente,

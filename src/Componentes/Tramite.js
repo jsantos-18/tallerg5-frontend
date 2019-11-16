@@ -42,36 +42,38 @@ class Tramite extends React.Component {
 
     async componentDidMount() {
 
-        /*const resTramite = await fetch(CONFIG + '/tesiss/listar/' + this.state.id);
+        const resTramite = await fetch(CONFIG + '/alumnos-programas-tramites/leer/codigo-alumno/' + this.state.id);
         const listaTramite = await resTramite.json();
+        console.log(resTramite);
+        console.log(listaTramite);
 
         let arrayTramite = [];
 
         listaTramite.forEach(element => {
             let tramite = {
-                id: element.id_apt,
+                id: element.idApt,
                 cod_alumno: this.state.id,
-                id_programa: element.id_programa,
-                id_tipotramite: element.id_tipotramite,
-                id_apb: element.id_abp,
-                n_expediente: element.n_expediente,
-                anio_expediente: element.anio_expediente,
-                fecha_expediente: element.fecha_expediente,
-                n_tramite: element.n_tramite,
-                anio_tramite: element.anio_tramite,
-                fecha_emision: element.fecha_emision,
-                usuario_emision: element.usuario_emision,
-                n_oficio: element.n_oficio,
-                anio_oficio: element.anio_oficio,
-                fecha_oficio: element.fecha_oficio,
-                importe_oficio: element.importe_oficio,
-                importe_matricula: element.importe_matricula,
-                importe_matricula_ad: element.importe_matricula_ad,
-                importe_matricula_epg: element.importe_matricula_epg,
-                importe_ensenanza: element.importe_ensenanza,
-                importe_repitencia: element.importe_repitencia,
-                importe_otros: element.importe_otros,
-                importe_total: element.importe_total
+                id_programa: element.idPrograma,
+                id_tipotramite: element.idTipoTramite,
+                id_apb: element.idApb,
+                n_expediente: element.nExpediente,
+                anio_expediente: element.anioExpediente,
+                fecha_expediente: element.fechaExpediente,
+                n_tramite: element.nTramite,
+                anio_tramite: element.anioTramite,
+                fecha_emision: element.fechEmision,
+                usuario_emision: element.usuarioEmision,
+                n_oficio: element.nOficio,
+                anio_oficio: element.anioOficio,
+                fecha_oficio: element.fechaOficio,
+                importe_oficio: element.importeOficio,
+                importe_matricula: element.importeMatricula,
+                importe_matricula_ad: element.importeMatriculaAd,
+                importe_matricula_epg: element.importeMatriculaEpg,
+                importe_ensenanza: element.importeEnsenanza,
+                importe_repitencia: element.importeRepitencia,
+                importe_otros: element.importeOtros,
+                importe_total: element.importeTotal
             };
             arrayTramite.push(tramite)
         });
@@ -80,7 +82,7 @@ class Tramite extends React.Component {
             data: arrayTramite
         });
 
-         */
+
     }
 
     agregar = (e) => {
