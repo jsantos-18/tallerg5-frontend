@@ -49,7 +49,7 @@ class TramiteRegistrar extends Component {
         console.log(resTipoTramites);
         console.log(tipotramites);
 
-        const resProgramasBeneficios = await fetch(CONFIG + '/alumnos-programas-beneficios/listar');
+        const resProgramasBeneficios = await fetch(CONFIG + '/alumnos-programas-beneficios/leer/codigo-alumno/' +this.state.id);
        const programasbeneficios = await resProgramasBeneficios.json();
        console.log(resProgramasBeneficios);
        console.log(programasbeneficios);
@@ -100,29 +100,31 @@ class TramiteRegistrar extends Component {
     async guardar() {
 
         let tramite = {
-            id_apt: this.state.id_apt,
-            cod_alumno: this.state.id,
-            id_programa: this.state.programa,
-            id_tipotramite: this.state.id_tipotramite,
-            id_apb: this.state.programabeneficio,
-            n_expediente: this.state.n_expediente,
-            anio_expediente: this.state.anio_expediente,
-            fecha_expediente: this.state.fecha_expediente,
-            n_tramite: this.state.n_tramite,
-            anio_tramite: this.state.anio_tramite,
-            fecha_emision: this.state.fecha_emision,
-            usuario_emision: this.state.usuario_emision,
-            n_oficio: this.state.n_oficio,
-            anio_oficio: this.state.anio_oficio,
-            fecha_oficio: this.state.fecha_oficio,
-            importe_oficio: this.state.importe_oficio,
-            importe_matricula: this.state.importe_matricula,
-            importe_matricula_ad: this.state.importe_matricula_ad,
-            importe_matricula_epg: this.state.importe_matricula_epg,
-            importe_ensenanza: this.state.importe_ensenanza,
-            importe_repitencia: this.state.importe_repitencia,
-            importe_otros: this.state.importe_otros,
-            importe_total: this.state.importe_total
+            //idApt: this.props.params.name,
+            //idApt: this.state.id_apt,
+            idApt: 400,
+            codAlumno: this.state.id,
+            idPrograma: this.state.programa,
+            idTipoTramite: this.state.id_tipotramite,
+            idApb: this.state.programabeneficio,
+            nExpediente: this.state.n_expediente,
+            anioExpediente: this.state.anio_expediente,
+            fechaExpediente: this.state.fecha_expediente,
+            nTramite: this.state.n_tramite,
+            anioTramite: this.state.anio_tramite,
+            fechaEmision: this.state.fecha_emision,
+            usuarioEmision: this.state.usuario_emision,
+            nOficio: this.state.n_oficio,
+            anioOficio: this.state.anio_oficio,
+            fechaOficio: this.state.fecha_oficio,
+            importeOficio: this.state.importe_oficio,
+            importeMatricula: this.state.importe_matricula,
+            importeMatriculaAd: this.state.importe_matricula_ad,
+            importeMatriculaEpg: this.state.importe_matricula_epg,
+            importeEnsenanza: this.state.importe_ensenanza,
+            importeRepitencia: this.state.importe_repitencia,
+            importeOtros: this.state.importe_otros,
+            importeTotal: this.state.importe_total
 
 
         }
@@ -134,8 +136,8 @@ class TramiteRegistrar extends Component {
        // }
 
         try {
-            const resTramite = await fetch(CONFIG + '/alumnotematesis/add', {
-                method: 'PUT',
+            const resTramite = await fetch(CONFIG + '/alumnos-programas-tramites/insertar', {
+                method: 'POST',
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json',
@@ -215,12 +217,12 @@ class TramiteRegistrar extends Component {
 
                     <div className="row sombra">
                         <div className="col-md-3"><h6 >Fecha de Emisión:</h6></div>
-                        <div className="col-md-9"><input className="estilo" type="text" id="fecha_emision" onChange={this.onChange} value={this.state.fecha_emision} /></div>
+                        <div className="col-md-9"><input className="estilo" type="date" id="fecha_emision" onChange={this.onChange} value={this.state.fecha_emision} /></div>
                     </div>
 
                     <div className="row sombra">
                         <div className="col-md-3"><h6 >Usuario Emisión:</h6></div>
-                        <div className="col-md-9"><input className="estilo" type="text" id="usuario_emmision" onChange={this.onChange} value={this.state.usuario_emision} /></div>
+                        <div className="col-md-9"><input className="estilo" type="text" id="usuario_emision" onChange={this.onChange} value={this.state.usuario_emision} /></div>
                     </div>
 
                     <div className="row ">
@@ -239,7 +241,7 @@ class TramiteRegistrar extends Component {
 
                     <div className="row sombra">
                         <div className="col-md-3"><h6 >Fecha de Oficio:</h6></div>
-                        <div className="col-md-9"><input className="estilo" type="date" id="fecha-oficio" onChange={this.onChange} value={this.state.fecha_oficio} /></div>
+                        <div className="col-md-9"><input className="estilo" type="date" id="fecha_oficio" onChange={this.onChange} value={this.state.fecha_oficio} /></div>
                     </div>
 
                     <div className="row sombra">
@@ -288,17 +290,17 @@ class TramiteRegistrar extends Component {
 
                     <div className="row sombra">
                         <div className="col-md-3"><h6 >Importe Enseñanza:</h6></div>
-                        <div className="col-md-9"><input className="estilo" type="number" id="importe_ensenanza" onChange={this.onChange} value={this.state.importe_matricula_epg} /></div>
+                        <div className="col-md-9"><input className="estilo" type="number" id="importe_ensenanza" onChange={this.onChange} value={this.state.importe_ensenanza} /></div>
                     </div>
 
                     <div className="row sombra">
                         <div className="col-md-3"><h6 >Importe Repitencia:</h6></div>
-                        <div className="col-md-9"><input className="estilo" type="number" id="importe_repitencia" onChange={this.onChange} value={this.state.importe_matricula_epg} /></div>
+                        <div className="col-md-9"><input className="estilo" type="number" id="importe_repitencia" onChange={this.onChange} value={this.state.importe_repitencia} /></div>
                     </div>
 
                     <div className="row sombra">
                         <div className="col-md-3"><h6 >Importe Otros:</h6></div>
-                        <div className="col-md-9"><input className="estilo" type="number" id="importe_otros" onChange={this.onChange} value={this.state.importe_matricula_epg} /></div>
+                        <div className="col-md-9"><input className="estilo" type="number" id="importe_otros" onChange={this.onChange} value={this.state.importe_otros} /></div>
                     </div>
 
                     <div className="row sombra">
