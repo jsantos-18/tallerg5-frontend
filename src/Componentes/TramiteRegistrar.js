@@ -13,6 +13,7 @@ class TramiteRegistrar extends Component {
 
         this.state = {
             id: this.props.params.name,
+            nom_programa: '',
             n_expediente: '',
             anio_expediente: '',
             fecha_expediente: '',
@@ -103,6 +104,7 @@ class TramiteRegistrar extends Component {
             //idApt: this.props.params.name,
             //idApt: this.state.id_apt,
             idApt: 400,
+            nomPrograma: this.state.nom_programa,
             codAlumno: this.state.id,
             idPrograma: this.state.programa,
             idTipoTramite: this.state.id_tipotramite,
