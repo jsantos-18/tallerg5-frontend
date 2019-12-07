@@ -1,3 +1,4 @@
+
 import React from 'react'
 import '../App.css'
 import swal from 'sweetalert';
@@ -46,21 +47,21 @@ class FormularioTramites extends React.Component {
             .then((response) => {
                 return response.json()
             }).then((listas) => {
-                console.log("listas");
-                console.log(listas);
-                var array = [];
+            console.log("listas");
+            console.log(listas);
+            var array = [];
 
-                for (var i = 0; i < listas.length; i++) {
-                    var e = { value: listas[i].tipo, label: listas[i].tipo }
-                    array.push(e);
+            for (var i = 0; i < listas.length; i++) {
+                var e = { value: listas[i].tipo, label: listas[i].tipo }
+                array.push(e);
 
-                }
+            }
 
-                this.setState({
-                    tipo: array,
-                    listas: listas
-                });
-            })
+            this.setState({
+                tipo: array,
+                listas: listas
+            });
+        })
             .catch(error => {
                 console.error(error)
             });
@@ -69,21 +70,21 @@ class FormularioTramites extends React.Component {
             .then((response) => {
                 return response.json()
             }).then((condicion) => {
-                console.log("condicion");
-                console.log(condicion);
-                var array2 = [];
+            console.log("condicion");
+            console.log(condicion);
+            var array2 = [];
 
-                for (var i = 0; i < condicion.length; i++) {
-                    var e = { value: condicion[i].condicion, label: condicion[i].condicion }
-                    array2.push(e);
+            for (var i = 0; i < condicion.length; i++) {
+                var e = { value: condicion[i].condicion, label: condicion[i].condicion }
+                array2.push(e);
 
-                }
+            }
 
-                this.setState({
-                    condicion: array2,
-                    listacondicion: condicion
-                });
-            })
+            this.setState({
+                condicion: array2,
+                listacondicion: condicion
+            });
+        })
             .catch(error => {
                 console.error(error)
             });
@@ -91,21 +92,21 @@ class FormularioTramites extends React.Component {
             .then((response) => {
                 return response.json()
             }).then((listas) => {
-                console.log("listas");
-                console.log(listas);
-                var array = [];
+            console.log("listas");
+            console.log(listas);
+            var array = [];
 
-                for (var i = 0; i < listas.length; i++) {
-                    var e = { value: listas[i].descripcion, label: listas[i].descripcion }
-                    array.push(e);
+            for (var i = 0; i < listas.length; i++) {
+                var e = { value: listas[i].descripcion, label: listas[i].descripcion }
+                array.push(e);
 
-                }
+            }
 
-                this.setState({
-                    criterio: array,
-                    listacriterio: listas
-                });
-            })
+            this.setState({
+                criterio: array,
+                listacriterio: listas
+            });
+        })
             .catch(error => {
                 console.error(error)
             });
@@ -128,38 +129,38 @@ class FormularioTramites extends React.Component {
         console.log(this.state.lista)
         fetch(CONFIG + '/beneficio/listar/' + codigo)
 
-        .then((response) => {
+            .then((response) => {
                 return response.json()
             }).then((datos) => {
 
-                //console.log("xdddid222"+datos[lista].id_abp)
-                document.getElementById("resolucion").value = datos[lista].resolucion;
-                document.getElementById("autorizacion").value = datos[lista].autorizacion;
-                document.getElementById("observacion").value = datos[lista].observacion;
-                document.getElementById("beneficio").value = datos[lista].benef_otrogado;
-                document.getElementById("importemaximo").value = datos[lista].benef_max;
-                document.getElementById("fecha").value = datos[lista].fecha;
-                this.setState({
-                    OpcionBeneficio: { value: datos[lista].tipo, label: datos[lista].tipo },
-                    OpcionCondicion: { value: datos[lista].condicion, label: datos[lista].condicion },
-                    OpcionCriterio: { value: datos[lista].criterio, label: datos[lista].criterio },
-                    valorTipo: this.leertipo(datos[lista].tipo),
-                    valorCondicion: this.leercondicion(datos[lista].condicion),
-                    valorCriterio: this.leercriterio(datos[lista].criterio),
-                    maximo: datos[lista].benef_max.substring(0, 2),
-                    abp: datos[lista].id_abp,
-                    idprograma: datos[lista].id_programa
-                })
-                console.log("xdddid" + datos[lista].id_abp)
-
-
-
-
-
-
-
-
+            //console.log("xdddid222"+datos[lista].id_abp)
+            document.getElementById("resolucion").value = datos[lista].resolucion;
+            document.getElementById("autorizacion").value = datos[lista].autorizacion;
+            document.getElementById("observacion").value = datos[lista].observacion;
+            document.getElementById("beneficio").value = datos[lista].benef_otrogado;
+            document.getElementById("importemaximo").value = datos[lista].benef_max;
+            document.getElementById("fecha").value = datos[lista].fecha;
+            this.setState({
+                OpcionBeneficio: { value: datos[lista].tipo, label: datos[lista].tipo },
+                OpcionCondicion: { value: datos[lista].condicion, label: datos[lista].condicion },
+                OpcionCriterio: { value: datos[lista].criterio, label: datos[lista].criterio },
+                valorTipo: this.leertipo(datos[lista].tipo),
+                valorCondicion: this.leercondicion(datos[lista].condicion),
+                valorCriterio: this.leercriterio(datos[lista].criterio),
+                maximo: datos[lista].benef_max.substring(0, 2),
+                abp: datos[lista].id_abp,
+                idprograma: datos[lista].id_programa
             })
+            console.log("xdddid" + datos[lista].id_abp)
+
+
+
+
+
+
+
+
+        })
             .catch(error => {
                 console.error(error)
             });
@@ -302,7 +303,7 @@ class FormularioTramites extends React.Component {
                             )
                         })
 
-                    .then((resp) => {
+                        .then((resp) => {
                             console.log(resp)
 
                             if (resp) {
@@ -343,7 +344,7 @@ class FormularioTramites extends React.Component {
                             )
                         })
 
-                    .then((resp) => {
+                        .then((resp) => {
                             console.log("need a little: " + resp)
 
                             if (resp) {
@@ -376,262 +377,262 @@ class FormularioTramites extends React.Component {
         return ( <
             div >
             <
-            div >
-            <
-            h3 > Formulario <
-            ul id = "nav-mobile"
-            className = "row right hide-on-med-and-down" >
-            <
-            li > < a className = "col seleccionar"
-            onClick = { this.Regresar } > Regresar < i className = "material-icons right" > reply < /i></a > < /li> <
-            /ul> <
-            /h3> <
-            /div>
+                div >
+                <
+                    h3 > Formulario <
+                    ul id = "nav-mobile"
+                       className = "row right hide-on-med-and-down" >
+                    <
+                        li > < a className = "col seleccionar"
+                                 onClick = { this.Regresar } > Regresar < i className = "material-icons right" > reply < /i></a > < /li> <
+                        /ul> <
+                        /h3> <
+                        /div>
 
 
-            <
-            div className = "container" >
-
-
-
-            <
-            div className = "row " >
-            <
-            div className = "col-md-12" > < h4 > Datos del Trámite < /h4></div >
-            <
-            /div>
-
-
-            <
-            div className = "row sombra" >
-            <
-            div className = "col-md-3" > < h6 > Tipo de trámite: < /h6></div > { /* <div className="col-md-12"><input type="text" id="beneficio" placeholder="Beneficios" disabled/></div> */ } <
-            div className = "col-md-9 " >
-            <
-            Select value = { this.state.OpcionBeneficio }
-            options = { this.state.tipo }
-            onChange = { this.handleChangeBeneficio }
-
-            /> <
-            /div>
-
-            <
-            div className = "row sombra" >
-            <
-            div className = "col-md-3" > < h6 > Número: < /h6></div >
-            <
-            div className = "col-md-9" > < input className = "estilo"
-            type = "text"
-            id = "autorizacion" / > < /div> <
-            /div>
+                        <
+                            div className = "container" >
 
 
 
-
-            <
-            div className = "row sombra" >
-            <
-            div className = "col-md-3" > < h6 > Año: < /h6></div > { /* <div className="col-md-12"><input type="text" id="condicion" placeholder="Condicion"disabled/></div> */ } <
-            div className = "col-md-9" >
-            <
-            Select
-
-            value = { this.state.OpcionCriterio }
-            options = { this.state.criterio }
-            onChange = { this.handleChangeCriterio }
-H
+                            <
+                                div className = "row " >
+                                <
+                                    div className = "col-md-12" > < h4 > Datos del Trámite < /h4></div >
+                                <
+                                    /div>
 
 
+                                    <
+                                        div className = "row sombra" >
+                                        <
+                                            div className = "col-md-3" > < h6 > Tipo de trámite: < /h6></div > { /* <div className="col-md-12"><input type="text" id="beneficio" placeholder="Beneficios" disabled/></div> */ } <
+                                        div className = "col-md-9 " >
+                                        <
+                                            Select value = { this.state.OpcionBeneficio }
+                                                   options = { this.state.tipo }
+                                                   onChange = { this.handleChangeBeneficio }
 
-            />
+                                        /> <
+                                        /div>
 
-
-            <
-            /div> <
-            /div>
-
-
-            <
-            /div>
-
-            <
-            div className = "row sombra" >
-            <
-            div className = "col-md-3" > < h6 > Fecha de emisión: < /h6></div >
-            <
-            div className = "col-md-9" > < input className = "estilo"
-            type = "date"
-            id = "fecha" / > < /div> <
-            /div>
-
-
-            <
-            div className = "row sombra" >
-            <
-            div className = "col-md-3" > < h6 > Usuario: < /h6></div >
-            <
-            div className = "col-md-9" > < input className = "estilo"
-            type = "text"
-            id = "autorizacion" / > < /div> <
-            /div>
-
-
-            <
-            div className = "row " >
-            <
-            div className = "col-md-12" > < h4 > Oficio < /h4></div >
-            <
-            /div>
-
-
-            <
-            div className = "row sombra" >
-            <
-            div className = "col-md-3" > < h6 > Nº Oficio: < /h6></div >
-            <
-            div className = "col-md-9" > < input className = "estilo"
-            type = "text"
-            id = "autorizacion" / > < /div> <
-            /div>
-
-            <
-            div className = "row sombra" >
-            <
-            div className = "col-md-3" > < h6 > Fecha de Oficio: < /h6></div >
-            <
-            div className = "col-md-9" > < input className = "estilo"
-            type = "date"
-            id = "fecha" / > < /div> <
-            /div>
-
-            <
-            div className = "row " >
-            <
-            div className = "col-md-12" > < h4 > Expediente < /h4></div >
-            <
-            /div>
-
-            <
-            div className = "row sombra" >
-            <
-            div className = "col-md-3" > < h6 > Nº Expediente: < /h6></div >
-            <
-            div className = "col-md-9" > < input className = "estilo"
-            type = "text"
-            id = "autorizacion" / > < /div> <
-            /div>
-
-            <
-            div className = "row sombra" >
-            <
-            div className = "col-md-3" > < h6 > Fecha de Expediente: < /h6></div >
-            <
-            div className = "col-md-9" > < input className = "estilo"
-            type = "date"
-            id = "fecha" / > < /div> <
-            /div>
-
-            <
-            div className = "row " >
-            <
-            div className = "col-md-12" > < h4 > Importe < /h4></div >
-            <
-            /div>
-
-            <
-            div className = "row sombra" >
-            <
-            div className = "col-md-3" > < h6 > Beneficio: < /h6></div > { /* <div className="col-md-12"><input type="text" id="condicion" placeholder="Condicion"disabled/></div> */ } <
-            div className = "col-md-9" >
-            <
-            Select
-
-            value = { this.state.OpcionCriterio }
-            options = { this.state.criterio }
-            onChange = { this.handleChangeCriterio }
+                                        <
+                                            div className = "row sombra" >
+                                            <
+                                                div className = "col-md-3" > < h6 > Número: < /h6></div >
+                                            <
+                                                div className = "col-md-9" > < input className = "estilo"
+                                                                                     type = "text"
+                                                                                     id = "autorizacion" / > < /div> <
+                                                /div>
 
 
 
 
-            />
+                                                <
+                                                    div className = "row sombra" >
+                                                    <
+                                                        div className = "col-md-3" > < h6 > Año: < /h6></div > { /* <div className="col-md-12"><input type="text" id="condicion" placeholder="Condicion"disabled/></div> */ } <
+                                                    div className = "col-md-9" >
+                                                    <
+                                                        Select
 
-
-            <
-            /div> <
-            /div>
-
-            <
-            div className = "row sombra" >
-            <
-            div className = "col-md-3" > < h6 > Importe a pagar: < /h6></div >
-            <
-            div className = "col-md-9" > < input className = "estilo"
-            type = "text"
-            id = "autorizacion" / > < /div> <
-            /div>
-
-            <
-            div className = "row sombra" >
-            <
-            div className = "col-md-3" > < h6 > EPG S / .: < /h6></div >
-            <
-            div className = "col-md-9" > < input className = "estilo"
-            type = "text"
-            id = "autorizacion" / > < /div> <
-            /div>
-
-            <
-            div className = "row sombra" >
-            <
-            div className = "col-md-3" > < h6 > Otros pagos S / .: < /h6></div >
-            <
-            div className = "col-md-9" > < input className = "estilo"
-            type = "text"
-            id = "autorizacion" / > < /div> <
-            /div>
-
-            <
-            div className = "row sombra" >
-            <
-            div className = "col-md-3" > < h6 > Pago total S / .: < /h6></div >
-            <
-            div className = "col-md-9" > < input className = "estilo"
-            type = "text"
-            id = "autorizacion" / > < /div> <
-            /div>
-
-            <
-            div className = "row" >
-
-            {
-                /* <div className=" col-md-6">
-                                                    <button  onClick={this.habilitar} className="  waves-effect waves-light btn-large botonazul2  " type="submit">Editar<i className=" material-icons left">check</i></button>
-                                                </div> */
-            } <
-            div className = " col-md-6" >
-            <
-            button onClick = { this.guardar }
-            className = "  waves-effect waves-light btn-large botonazul2  "
-            type = "submit" > Guardar < i className = " material-icons left" > save < /i></button >
-            <
-            /div>
-
-
-            <
-            /div>
+                                                        value = { this.state.OpcionCriterio }
+                                                        options = { this.state.criterio }
+                                                        onChange = { this.handleChangeCriterio }
+                                                        H
 
 
 
-
-            <
-            /div>
+                                                    />
 
 
-            <
-            /div>
-        )
-    }
+                                                    <
+                                                        /div> <
+                                                        /div>
 
-}
 
-export default FormularioTramites
+                                                        <
+                                                            /div>
+
+                                                            <
+                                                                div className = "row sombra" >
+                                                                <
+                                                                    div className = "col-md-3" > < h6 > Fecha de emisión: < /h6></div >
+                                                                <
+                                                                    div className = "col-md-9" > < input className = "estilo"
+                                                                                                         type = "date"
+                                                                                                         id = "fecha" / > < /div> <
+                                                                    /div>
+
+
+                                                                    <
+                                                                        div className = "row sombra" >
+                                                                        <
+                                                                            div className = "col-md-3" > < h6 > Usuario: < /h6></div >
+                                                                        <
+                                                                            div className = "col-md-9" > < input className = "estilo"
+                                                                                                                 type = "text"
+                                                                                                                 id = "autorizacion" / > < /div> <
+                                                                            /div>
+
+
+                                                                            <
+                                                                                div className = "row " >
+                                                                                <
+                                                                                    div className = "col-md-12" > < h4 > Oficio < /h4></div >
+                                                                                <
+                                                                                    /div>
+
+
+                                                                                    <
+                                                                                        div className = "row sombra" >
+                                                                                        <
+                                                                                            div className = "col-md-3" > < h6 > Nº Oficio: < /h6></div >
+                                                                                        <
+                                                                                            div className = "col-md-9" > < input className = "estilo"
+                                                                                                                                 type = "text"
+                                                                                                                                 id = "autorizacion" / > < /div> <
+                                                                                            /div>
+
+                                                                                            <
+                                                                                                div className = "row sombra" >
+                                                                                                <
+                                                                                                    div className = "col-md-3" > < h6 > Fecha de Oficio: < /h6></div >
+                                                                                                <
+                                                                                                    div className = "col-md-9" > < input className = "estilo"
+                                                                                                                                         type = "date"
+                                                                                                                                         id = "fecha" / > < /div> <
+                                                                                                    /div>
+
+                                                                                                    <
+                                                                                                        div className = "row " >
+                                                                                                        <
+                                                                                                            div className = "col-md-12" > < h4 > Expediente < /h4></div >
+                                                                                                        <
+                                                                                                            /div>
+
+                                                                                                            <
+                                                                                                                div className = "row sombra" >
+                                                                                                                <
+                                                                                                                    div className = "col-md-3" > < h6 > Nº Expediente: < /h6></div >
+                                                                                                                <
+                                                                                                                    div className = "col-md-9" > < input className = "estilo"
+                                                                                                                                                         type = "text"
+                                                                                                                                                         id = "autorizacion" / > < /div> <
+                                                                                                                    /div>
+
+                                                                                                                    <
+                                                                                                                        div className = "row sombra" >
+                                                                                                                        <
+                                                                                                                            div className = "col-md-3" > < h6 > Fecha de Expediente: < /h6></div >
+                                                                                                                        <
+                                                                                                                            div className = "col-md-9" > < input className = "estilo"
+                                                                                                                                                                 type = "date"
+                                                                                                                                                                 id = "fecha" / > < /div> <
+                                                                                                                            /div>
+
+                                                                                                                            <
+                                                                                                                                div className = "row " >
+                                                                                                                                <
+                                                                                                                                    div className = "col-md-12" > < h4 > Importe < /h4></div >
+                                                                                                                                <
+                                                                                                                                    /div>
+
+                                                                                                                                    <
+                                                                                                                                        div className = "row sombra" >
+                                                                                                                                        <
+                                                                                                                                            div className = "col-md-3" > < h6 > Beneficio: < /h6></div > { /* <div className="col-md-12"><input type="text" id="condicion" placeholder="Condicion"disabled/></div> */ } <
+                                                                                                                                        div className = "col-md-9" >
+                                                                                                                                        <
+                                                                                                                                            Select
+
+                                                                                                                                            value = { this.state.OpcionCriterio }
+                                                                                                                                            options = { this.state.criterio }
+                                                                                                                                            onChange = { this.handleChangeCriterio }
+
+
+
+
+                                                                                                                                        />
+
+
+                                                                                                                                        <
+                                                                                                                                            /div> <
+                                                                                                                                            /div>
+
+                                                                                                                                            <
+                                                                                                                                                div className = "row sombra" >
+                                                                                                                                                <
+                                                                                                                                                    div className = "col-md-3" > < h6 > Importe a pagar: < /h6></div >
+                                                                                                                                                <
+                                                                                                                                                    div className = "col-md-9" > < input className = "estilo"
+                                                                                                                                                                                         type = "text"
+                                                                                                                                                                                         id = "autorizacion" / > < /div> <
+                                                                                                                                                    /div>
+
+                                                                                                                                                    <
+                                                                                                                                                        div className = "row sombra" >
+                                                                                                                                                        <
+                                                                                                                                                            div className = "col-md-3" > < h6 > EPG S / .: < /h6></div >
+                                                                                                                                                        <
+                                                                                                                                                            div className = "col-md-9" > < input className = "estilo"
+                                                                                                                                                                                                 type = "text"
+                                                                                                                                                                                                 id = "autorizacion" / > < /div> <
+                                                                                                                                                            /div>
+
+                                                                                                                                                            <
+                                                                                                                                                                div className = "row sombra" >
+                                                                                                                                                                <
+                                                                                                                                                                    div className = "col-md-3" > < h6 > Otros pagos S / .: < /h6></div >
+                                                                                                                                                                <
+                                                                                                                                                                    div className = "col-md-9" > < input className = "estilo"
+                                                                                                                                                                                                         type = "text"
+                                                                                                                                                                                                         id = "autorizacion" / > < /div> <
+                                                                                                                                                                    /div>
+
+                                                                                                                                                                    <
+                                                                                                                                                                        div className = "row sombra" >
+                                                                                                                                                                        <
+                                                                                                                                                                            div className = "col-md-3" > < h6 > Pago total S / .: < /h6></div >
+                                                                                                                                                                        <
+                                                                                                                                                                            div className = "col-md-9" > < input className = "estilo"
+                                                                                                                                                                                                                 type = "text"
+                                                                                                                                                                                                                 id = "autorizacion" / > < /div> <
+                                                                                                                                                                            /div>
+
+                                                                                                                                                                            <
+                                                                                                                                                                                div className = "row" >
+
+                                                                                                                                                                                {
+                                                                                                                                                                                    /* <div className=" col-md-6">
+                                                                                                                                                                                                                        <button  onClick={this.habilitar} className="  waves-effect waves-light btn-large botonazul2  " type="submit">Editar<i className=" material-icons left">check</i></button>
+                                                                                                                                                                                                                    </div> */
+                                                                                                                                                                                } <
+                                                                                                                                                                                div className = " col-md-6" >
+                                                                                                                                                                                <
+                                                                                                                                                                                    button onClick = { this.guardar }
+                                                                                                                                                                                           className = "  waves-effect waves-light btn-large botonazul2  "
+                                                                                                                                                                                           type = "submit" > Guardar < i className = " material-icons left" > save < /i></button >
+                                                                                                                                                                                <
+                                                                                                                                                                                    /div>
+
+
+                                                                                                                                                                                    <
+                                                                                                                                                                                        /div>
+
+
+
+
+                                                                                                                                                                                        <
+                                                                                                                                                                                            /div>
+
+
+                                                                                                                                                                                            <
+                                                                                                                                                                                                /div>
+                                                                                                                                                                                                )
+                                                                                                                                                                                                }
+
+                                                                                                                                                                                                }
+
+                                                                                                                                                                                                export default FormularioTramites

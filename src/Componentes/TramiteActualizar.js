@@ -153,7 +153,7 @@ class TramiteActualizar extends Component {
         }
 
         try {
-            const resDocenteTemaTesis = await fetch(CONFIG + '/alumnotematesisdocente/update', {
+            const resDocenteTemaTesis = await fetch(CONFIG + '/alumnos-programas-tramites/actualizar', {
                 method: 'PUT',
                 headers: {
                     'Accept': 'application/json',
@@ -161,16 +161,6 @@ class TramiteActualizar extends Component {
                 },
                 body: JSON.stringify(tesisDocente)
             });
-
-            const resTemaTesis = await fetch(CONFIG + '/alumnotematesis/update', {
-                method: 'PUT',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(tesis)
-            });
-
             swal("Tesis actualizada correctamente!", "", "success").then(
                 this.Regresar()
             );
@@ -181,7 +171,7 @@ class TramiteActualizar extends Component {
     }
 
     Regresar = (e) => {
-        browserHistory.push('/' + this.state.id + '/tesis');
+        browserHistory.push('/' + this.state.id + '/tramite');
         e.preventDefault();
     }
 

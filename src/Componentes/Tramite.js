@@ -43,8 +43,9 @@ class Tramite extends React.Component {
     async componentDidMount() {
 
         const resTramite = await fetch(CONFIG + '/alumnos-programas-tramites/leer/codigo-alumno/' + this.state.id);
-        const listaTramite = await resTramite.json();
         console.log(resTramite);
+        const listaTramite = await resTramite.json();
+
         console.log(listaTramite);
 
         let arrayTramite = [];
@@ -61,7 +62,7 @@ class Tramite extends React.Component {
                 fecha_expediente: element.fechaExpediente,
                 n_tramite: element.nTramite,
                 anio_tramite: element.anioTramite,
-                fecha_emision: element.fechEmision,
+                fecha_emision: element.fechaEmision,
                 usuario_emision: element.usuarioEmision,
                 n_oficio: element.nOficio,
                 anio_oficio: element.anioOficio,
@@ -198,5 +199,3 @@ class Tramite extends React.Component {
 }
 
 export default Tramite;
-
-
