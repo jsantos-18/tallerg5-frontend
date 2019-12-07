@@ -541,12 +541,12 @@ this.setState({
         .then((response) => {
         return response.json();
         })
-        .then((pagos)  =>{
+        /*.then((pagos)  =>{
           console.log("anyiiiiiiiiiiiiiiiiiiii"+this.state.pagos[0].estado_civil)
           this.setState({
           estadoAlumno:this.state.pagos[0].estado_civil,
           })
-        });
+        }); */
           }
 
 

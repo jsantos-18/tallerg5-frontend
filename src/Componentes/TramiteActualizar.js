@@ -12,100 +12,87 @@ class TramiteActualizar extends Component {
         super(props);
         this.state = {
             loading: true,
-            idTesis: this.props.params.code,
             id: this.props.params.name,
-            titulo: '',
-            situacion: '',
-            problema: '',
-            justificacion: '',
-            fecha: '',
-            comentario: '',
+            //id_apt: '',
+            nom_programa: '',
+            n_expediente: '',
+            anio_expediente: '',
+            fecha_expediente: '',
+            n_tramite: '',
+            anio_tramite: '',
+            fecha_emision: '',
+            usuario_emision: '',
+            n_oficio: '',
+            anio_oficio: '',
+            fecha_oficio: '',
+            importe_oficio: '',
+            importe_matricula: '',
+            importe_matricula_ad: '',
+            importe_matricula_epg: '',
+            importe_ensenanza: '',
+            importe_repitencia: '',
+            importe_otros: '',
+            importe_total:'',
             programas: [],
-            grupos: [],
-            cursos: [],
-            docentes: [],
-            estados: [],
-            roles: [],
-            // programa: '',
-            grupo: '',
-            curso: '',
-            docente: '',
-            estado: '',
-            rol: '',
-            planestudios: ''
+            tipotramites: [],
+            programasbeneficios: [],
+            programa: '',
+            tipotramite: '',
+            programabeneficio: ''
         }
         this.actualizar = this.actualizar.bind(this);
-        console.log(this.state.idTesis);
+        console.log(this.state.id);
     }
 
     async componentDidMount() {
 
-        const resGrupos = await fetch(CONFIG + '/gi/listar');
-        const grupos = await resGrupos.json();
+        const resTipoTramites = await fetch(CONFIG + 'tipos-tramites/listar');
+        const tipotramites = await resTipoTramites.json();
+        console.log(resTipoTramites);
+        console.log(tipotramites);
 
-        const resCursos = await fetch(CONFIG + '/curso/listar');
-        const cursos = await resCursos.json();
+        const resProgramasBeneficios = await fetch(CONFIG + '/alumnos-programas-beneficios/leer/codigo-alumno/' +this.state.id);
+        const programasbeneficios = await resProgramasBeneficios.json();
+        console.log(resProgramasBeneficios);
+        console.log(programasbeneficios);
 
-        const resDocentes = await fetch(CONFIG + '/docente/listar');
-        const docentes = await resDocentes.json();
+        const resProgramas = await fetch(CONFIG + '/alumnos-programas-tramites/listar');
+        const programas = await resProgramas.json();
+        console.log(resProgramas);
+        console.log(programas);
 
-        const resEstados = await fetch(CONFIG + '/estado/listar');
-        const estados = await resEstados.json();
+        let arrayProgramasBeneficios = [];
+        let arrayProgramas = [];
+        let arrayTipoTramites = [];
 
-        const resRoles = await fetch(CONFIG + '/rol/listar');
-        const roles = await resRoles.json();
 
-        const resTesis = await fetch(CONFIG + '/tesisss/buscar/' + this.state.idTesis);
-        const tesis = await resTesis.json();
-
-        let arrayGrupos = [];
-        let arrayCursos = [];
-        let arrayDocentes = [];
-        let arrayEstados = [];
-        let arrayRoles = [];
-
-        grupos.forEach(element => {
-            let grupo = {
-                value: element.id_gi,
-                label: element.gi_desc
+        tipotramites.forEach(element => {
+            let tipotramite = {
+                value: element.idTipoTramite,
+                label: element.descTipoTramite,
             };
-            arrayGrupos.push(grupo)
+            arrayTipoTramites.push(tipotramite)
         });
 
-        cursos.forEach(element => {
-            let curso = {
-                value: element.idCurso,
-                label: element.nomCurso,
-                planestudios: element.planestudios
+        programasbeneficios.forEach(element => {
+            let programabeneficio = {
+                value: element.idBeneficio,
+                label: element.beneficioOtorgado
             };
-            arrayCursos.push(curso)
+            arrayProgramasBeneficios.push(programabeneficio)
         });
 
-        docentes.forEach(element => {
-            let docente = {
-                value: element.idDocente,
-                label: element.nombres
-            };
-            arrayDocentes.push(docente)
-        });
 
-        estados.forEach(element => {
-            let estado = {
-                value: element.estado_id,
-                label: element.estado_descripcion
+        programas.forEach(element => {
+            let programa = {
+                value: element.idPrograma,
+                label: element.idPrograma
             };
-            arrayEstados.push(estado)
-        });
-
-        roles.forEach(element => {
-            let rol = {
-                value: element.rol,
-                label: element.rol_desc
-            };
-            arrayRoles.push(rol)
+            arrayProgramas.push(programa)
         });
 
         this.setState({
+            nomPrograma:
             titulo: tesis.atematesis_titulo,
             situacion: tesis.atematesis_situacion,
             problema: tesis.atematesis_problema,
@@ -132,36 +119,46 @@ class TramiteActualizar extends Component {
 
     async actualizar() {
 
-        let tesis = {
-            id_atematesis: this.state.idTesis,
-            atematesis_titulo: this.state.titulo,
-            atematesis_situacion: this.state.situacion,
-            atematesis_problema: this.state.problema,
-            atematesis_justificacion: this.state.justificacion,
-            atematesis_fecha: this.state.fecha,
-            atematesis_comentario: this.state.comentario,
-            gi_id: this.state.grupo,
-            id_curso: this.state.curso,
-            planestudios: this.state.planestudios
-        }
+        let tramite = {
+            //idApt: this.props.params.name,
+            //idApt: this.state.id_apt,
+            nomPrograma: this.state.nom_programa,
+            codAlumno: this.state.id,
+            idPrograma: this.state.programa,
+            idTipoTramite: this.state.id_tipotramite,
+            idApb: this.state.programabeneficio,
+            nExpediente: this.state.n_expediente,
+            anioExpediente: this.state.anio_expediente,
+            fechaExpediente: this.state.fecha_expediente,
+            nTramite: this.state.n_tramite,
+            anioTramite: this.state.anio_tramite,
+            fechaEmision: this.state.fecha_emision,
+            usuarioEmision: this.state.usuario_emision,
+            nOficio: this.state.n_oficio,
+            anioOficio: this.state.anio_oficio,
+            fechaOficio: this.state.fecha_oficio,
+            importeOficio: this.state.importe_oficio,
+            importeMatricula: this.state.importe_matricula,
+            importeMatriculaAd: this.state.importe_matricula_ad,
+            importeMatriculaEpg: this.state.importe_matricula_epg,
+            importeEnsenanza: this.state.importe_ensenanza,
+            importeRepitencia: this.state.importe_repitencia,
+            importeOtros: this.state.importe_otros,
+            importeTotal: this.state.importe_total
 
-        let tesisDocente = {
-            id_docente: this.state.docente,
-            id_atematesis: this.state.idTesis,
-            estado_id: this.state.estado,
-            rol_id: this.state.rol
+
         }
 
         try {
-            const resDocenteTemaTesis = await fetch(CONFIG + '/alumnos-programas-tramites/actualizar', {
+            const resTramite = await fetch(CONFIG + '/alumnos-programas-tramites/actualizar', {
                 method: 'PUT',
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(tesisDocente)
+                body: JSON.stringify(tramite)
             });
-            swal("Tesis actualizada correctamente!", "", "success").then(
+            swal("Tramite actualizado correctamente!", "", "success").then(
                 this.Regresar()
             );
 

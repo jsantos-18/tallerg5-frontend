@@ -542,13 +542,13 @@ class FormularioTramites extends React.Component {
                                                                                                                                     <
                                                                                                                                         div className = "row sombra" >
                                                                                                                                         <
-                                                                                                                                            div className = "col-md-3" > < h6 > Beneficio: < /h6></div > { /* <div className="col-md-12"><input type="text" id="condicion" placeholder="Condicion"disabled/></div> */ } <
+                                                                                                                                            div className = "col-md-3" > < h6 > Beneficio: </h6></div > { /* <div className="col-md-12"><input type="text" id="condicion" placeholder="Condicion"disabled/></div> */ } <
                                                                                                                                         div className = "col-md-9" >
                                                                                                                                         <
                                                                                                                                             Select
 
-                                                                                                                                            value = { this.state.OpcionCriterio }
-                                                                                                                                            options = { this.state.criterio }
+                                                                                                                                          //  value = { this.state.OpcionCriterio }
+                                                                                                                                            //options = { this.state.criterio }
                                                                                                                                             onChange = { this.handleChangeCriterio }
 
 
