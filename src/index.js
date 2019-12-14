@@ -23,29 +23,29 @@ class Index extends React.Component {
     render() {
         return(
             <Router history={browserHistory}>
-            <Route
-                component={() => <LoginForm />}
-                path="/">
-            </Route>
-            
-            <Route path="/:name" component={App}></Route>
-            <Route path="/filtro/:name" component={VistaIntermedia}></Route>
-            <Route path="/vista/nueva" component={AppNueva}></Route>
-            <Route path="/vista/nueva2" component={AppNueva2}></Route>
-            <Route path="/vista/tabla" component={ VistaTablaNuevo}></Route>
-            <Route path="/vista/loginNyA" component={LoginFormNombreApellidos}></Route>
-            <Route path="/vista/imprimir" component={ComponenteEditable}></Route>
-            <Route path="/formulario/:codigo" component={Formulario}></Route>
+                <Route
+                    component={() => <LoginForm />}
+                    path="/">
+                </Route>
+
+                <Route path="/:name" component={App}></Route>
+                <Route path="/filtro/:name" component={VistaIntermedia}></Route>
+                <Route path="/vista/nueva" component={AppNueva}></Route>
+                <Route path="/vista/nueva2" component={AppNueva2}></Route>
+                <Route path="/vista/tabla" component={ VistaTablaNuevo}></Route>
+                <Route path="/vista/loginNyA" component={LoginFormNombreApellidos}></Route>
+                <Route path="/vista/imprimir" component={ComponenteEditable}></Route>
+                <Route path="/formulario/:codigo" component={Formulario}></Route>
                 <Route path="/:name/tramite" component={Tramite}></Route>
                 <Route path="/:name/tramite/agregar" component={TramiteRegistrar}></Route>
+                <Route path="/:name/tramite/:id" component={TramiteRegistrar}></Route>
 
+                <Route path="/:name/vista/egresado" component={VistaSeguimientoEgresado}></Route>
 
-            <Route path="/:name/vista/egresado" component={VistaSeguimientoEgresado}></Route>
-            
-          </Router>
-          )
-      }
-      
+            </Router>
+        )
+    }
+
 }
 
 ReactDOM.render(

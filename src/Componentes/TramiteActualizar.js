@@ -92,7 +92,7 @@ class TramiteActualizar extends Component {
         });
 
         this.setState({
-            nomPrograma:
+            nomPrograma:'',
             titulo: tesis.atematesis_titulo,
             situacion: tesis.atematesis_situacion,
             problema: tesis.atematesis_problema,
@@ -184,6 +184,7 @@ class TramiteActualizar extends Component {
                             </ul>
                         </h3>
                     </div>
+
 
 
                     <div className="container" >

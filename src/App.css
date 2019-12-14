@@ -14,10 +14,10 @@
 .tfuente{
   font-size: 15px !important;
 }
-::placeholder { 
+::placeholder {
   color: black;
   text-align: center;
-  opacity: 1; 
+  opacity: 1;
 }
 .opciones{
   color: black;
@@ -33,7 +33,7 @@
   padding-left: 40px;
 }
 .block{
-  
+
   display: block;
 }
 .margen_top{
@@ -41,7 +41,7 @@
   margin-bottom: 0px;
 }
 .ancho{
-width: 130px !important; /*Aquí va el ancho de la Celda*/
+  width: 130px !important; /*Aquí va el ancho de la Celda*/
 
 }
 .espacio2{
@@ -52,7 +52,7 @@ width: 130px !important; /*Aquí va el ancho de la Celda*/
   height: 280px;
 }
 .table {
-  
+
   border-collapse: collapse;/*juntamos los border por td y la tabla en si en uno solo*/
   width: 100%;
   border: 3px solid WHITE;
@@ -73,27 +73,27 @@ width: 130px !important; /*Aquí va el ancho de la Celda*/
   align-content: center;
 }
 .th{
-  
-height: 10px;
-text-align: center;/*Alineamos el texto al centro ---th por defecto e
+
+  height: 10px;
+  text-align: center;/*Alineamos el texto al centro ---th por defecto e
 
 alineado al centro*/
- /* vertical-align: bottom; Alineamos el texto verticalmente hacia abajo*/
-padding: 3px;
-background-color:#215c75;
-color: white;
-border: 3px solid WHITE;
-border-radius: 8px;
-/*border-bottom: 1px solid #ddd;para borde solo horizontal*/
+  /* vertical-align: bottom; Alineamos el texto verticalmente hacia abajo*/
+  padding: 3px;
+  background-color:#215c75;
+  color: white;
+  border: 3px solid WHITE;
+  border-radius: 8px;
+  /*border-bottom: 1px solid #ddd;para borde solo horizontal*/
 }
 .td{
   height: 10px;
   text-align: center;/*Alineamos el texto al centro ---th por defecto esta alineado al centro*/
-   /* vertical-align: bottom; Alineamos el texto verticalmente hacia abajo*/
+  /* vertical-align: bottom; Alineamos el texto verticalmente hacia abajo*/
   padding-left: 10px;
   padding-right: 10px;
   border: 3px solid WHITE;
- 
+
   /*border-bottom: 1px solid #ddd;para borde solo horizontal*/
 }
 
@@ -117,13 +117,13 @@ border-radius: 8px;
 } */
 
 label {
- 
+
   text-align: center;
   display: block;
   margin: .5em 0;
   color: black;
   font-weight: bold;
-  
+
   font-family: 'Times New Roman', Times, serif;
   width: 90px;
 }
@@ -131,14 +131,14 @@ label {
 
 
 .imprimir{
- float: right;
- margin-right:40px;
+  float: right;
+  margin-right:40px;
 }
 .importe{
   margin-left:10px;
   margin-right:20px;
   margin-top:20px;
- }
+}
 /* 
 .pagination{
   display: inline-block;
@@ -176,51 +176,51 @@ label {
 .margenFECHA{
   margin-left: 850px;
   margin-top: -20px;
-  
- } 
 
- .container{
-   margin-top: 20px;
+}
+
+.container{
+  margin-top: 20px;
   background:#eceaea;
   border-radius: 15px;
   padding: 30px;
   width: 500px;
-  
-  
-   
- }
- .sombra{
-   background: #e8e5e5;
-   margin-top: 5px;
-   border-radius: 15px;
- }
 
- textarea{
-   padding: 10px;
-   border-radius: 8px;
-   
-   
- }
- 
 
- .sombra2{
-   padding:5px;
-   background: #e8e5e5;
-   margin-top: 5px;
-   border-radius: 15px;
- }
- 
 
- .margenFECHA2{
+}
+.sombra{
+  background: #e8e5e5;
+  margin-top: 5px;
+  border-radius: 15px;
+}
+
+textarea{
+  padding: 10px;
+  border-radius: 8px;
+
+
+}
+
+
+.sombra2{
+  padding:5px;
+  background: #e8e5e5;
+  margin-top: 5px;
+  border-radius: 15px;
+}
+
+
+.margenFECHA2{
   margin-left: 980px;
   margin-top: -63px;
 
- } 
- 
+}
+
 .margen2{
   margin-top: 20px;
   margin-bottom: 20px;
- } 
+}
 .margen_izq{
   margin-left: 65px;
   margin-right: 20px;
@@ -232,20 +232,20 @@ label {
   margin-left: 150px;
 }
 .margen{
-  
+
   padding-left: 10px;
   padding-right: 40px;
 }
 .estilo{
- height: 30px !important;
+  height: 30px !important;
 }
 h3{
   background-color:black;
   color:  lightblue;
-	padding: 20px;
-	text-align: center;
-	font-weight: 100;
-	font-size: 28px;
+  padding: 20px;
+  text-align: center;
+  font-weight: 100;
+  font-size: 28px;
   width : 50%;
   margin: 0 auto;
   width:100%;
@@ -322,12 +322,12 @@ h4{
 }
 .Alumno{
   color: #215c75;
-  
+
 }
 
 h6 {
   font-size:15px;
-  }
+}
 
 .center{
   text-align: center;
@@ -412,12 +412,12 @@ h6 {
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
 }
- 
+
 .numero li:hover {
   color: #607D8B;
   background-color: #DDD;
 }
- 
+
 button {
   background-color: #eee;
   border: none;
@@ -445,8 +445,8 @@ button.delete:hover{
   background-color: teal;
 }
 .row {
- 
-   margin-bottom: 0px;
+
+  margin-bottom: 0px;
 }
 .align-vertical-center{
   display: block;
@@ -460,7 +460,7 @@ button.delete:hover{
 }
 .content-menu{
   display: flex;
-  
+
 }
 
 /*Navbar style*/
@@ -500,11 +500,11 @@ button.delete:hover{
 
 /*ULTIMO*/
 .content-menu-right{
-  
+
   width: 100%;
   padding: 2px;
-				 
-				   
+
+
 }
 .contenedor {
   width: 100%;
@@ -527,10 +527,10 @@ button.delete:hover{
 
 .entidad-input{
   text-align: left;
-		 
-			  
-				  
-					
+
+
+
+
 }
 .span{
   /*width: 150px;*/
@@ -559,8 +559,26 @@ table tbody tr td .centrar-label {
 }
 .centrar-contenido td{
   text-align: center;
-}				   
+}
 
 #main {
   transition: margin-right .5s;
+}
+
+.tab-list {
+  border-bottom: 1px solid #ccc;
+  padding-left: 0;
+}
+
+.tab-list-item {
+  display: inline-block;
+  list-style: none;
+  margin-bottom: -1px;
+  padding: 0.5rem 0.75rem;
+}
+
+.tab-list-active {
+  background-color: white;
+  border: solid #ccc;
+  border-width: 1px 1px 0 1px;
 }
